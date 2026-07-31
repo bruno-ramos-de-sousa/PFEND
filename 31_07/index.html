@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--<script>
+        //String
+        var texto = "Curso de JavaScript"
+
+        //number
+        var numeroInteiro = -7;
+        var numeroFracionado = 11210.75
+
+        //boolean
+        var teste = false;
+
+        //alert(numeroFracionado) abrir um dialog
+        //document.write(texto)
+        console.log(numeroInteiro)
+    </script>-->
+
+    <!--<script>
+        var nome = prompt("Digite o seu nome:")
+        var idade = prompt("Digite a sua idade:")
+        var idade2 = 50
+
+        console.log(idade)
+        console.log(idade2)
+
+        document.write("<h1>Olá " + nome + ", tudo bem? Estou vendo aqui que você tem " + idade + " anos, você tem " + (idade2 - idade) + " até os 50 anos</h1>")
+    </script>-->
+
+    <!--<script>
+        var texto = prompt("Digite um texto:")
+        var numeroInteiro = prompt("Digite um número inteiro:")
+        var numeroDecimal = prompt("Digite um número decimal:")
+
+        var soma = parseInt(numeroInteiro) + 150
+        var tipoBool = false
+
+        document.write(`<h1>PRIMEIRA AULA DE JAVASCRIPT</h1>`)
+        document.write(`<ul><li>A variável texto contêm o valor: ${texto}</li>`)
+        document.write(`<li>A variável numeroInteiro contêm o valor: ${numeroInteiro}</li>`)
+        document.write(`<li>A variável numero dicimal contêm o valor: ${numeroDecimal}</li></ul>`) 
+    </script>-->
+
+    <!--<script>
+        var nota = prompt('Digite a nota do aluno:')
+        var faltas = prompt('Digite a quantidade:')
+
+        var media = 7
+        var faltas_maximas = 15
+
+        if (nota >= media && faltas <= faltas_maximas) {
+            document.write('Aprovado')
+        } else {
+            document.write('Reprovado')
+        }
+    </script>-->
+
+    <script>
+        var peso = prompt('Digite seu peso em kg:')
+        var altura = prompt('Digite seu peso em m:')
+
+        const imc = parseInt(peso) / parseFloat(altura)**2
+
+        if (imc < 18.5) {
+            document.write(`Seu imc é ${imc.toFixed(2)} você está abaixo do peso normal`)
+        } else if (imc < 25) {
+            document.write(`Seu imc é ${imc.toFixed(2)} você está com peso normal`)
+        } else if (imc < 30) {
+            document.write(`Seu imc é ${imc.toFixed(2)} você está com excesso de peso`)
+        } else if (imc < 35) {
+            document.write(`Seu imc é ${imc.toFixed(2)} você está na obesidade classe I`)
+        } else if (imc < 40) {
+            document.write(`Seu imc é ${imc.toFixed(2)} você está na obesidade classe II`)
+        } else {
+            document.write(`Seu imc é ${imc.toFixed(2)} você está na obesidade classe III`)
+        }
+    </script>
+</body>
+
+</html>
