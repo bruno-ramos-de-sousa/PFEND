@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-self: center;
+    margin-top: 40vh;
+}
+
+#valor {
+    margin: 10px 0px;
+}
+
+#escolha {
+    margin: 10px 0px;
+}
+
+#labelParcelas {
+    display: none;
+}
+
+#parcelas {
+    display: none;
+    margin: 10px 0px;
+}
