@@ -7,7 +7,7 @@ const labelParcelas = document.getElementById("labelParcelas");
 function calcular() {
   const escolhaValue = parseInt(escolha.value);
   const qtdParcelas = parseInt(parcelas.value);
-  const valor = isNaN(valorInput) ? 0.0 : parseFloat(valorInput.value);
+  const valor = isNaN(valorInput.value) ? 0.0 : parseFloat(valorInput.value);
 
   switch (escolhaValue) {
     case 1:
@@ -20,14 +20,14 @@ function calcular() {
     case 2:
       parcelas.style.display = "none";
       labelParcelas.style.display = "none";
-      valorPagar.textContent = `Total a pagar R$${valor}`;
+      valorPagar.textContent = `Total a pagar R$${valor.toFixed(2)}`;
       break;
 
     case 3:
       parcelas.style.display = "block";
       labelParcelas.style.display = "block";
 
-      parcelas.innerHTML = `<option value="1">1x de R$${valor}</option>
+      parcelas.innerHTML = `<option value="1">1x de R$${valor.toFixed(2)}</option>
       <option value="2">2x de R$${(valor / 2).toFixed(2)}</option>
       <option value="3">3x de R$${(valor / 3).toFixed(2)}</option>
       <option value="4">4x de R$${(valor / 4).toFixed(2)}</option>
@@ -37,7 +37,7 @@ function calcular() {
       <option value="8">8x de R$${(valor / 8).toFixed(2)}</option>
       <option value="9">9x de R$${(valor / 9).toFixed(2)}</option>
       <option value="10">10x de R$${(valor / 10).toFixed(2)}</option>`;
-      valorPagar.textContent = `Total a pagar R$${valor}`;
+      valorPagar.textContent = `Total a pagar R$${valor.toFixed(2)}`;
       break;
 
     case 4:
@@ -47,7 +47,7 @@ function calcular() {
       const jurosMedio = 1.05;
       const jurosAlto = 1.07;
 
-      parcelas.innerHTML = `<option value="1">1x de R$${valor * jurosBaixo}</option>
+      parcelas.innerHTML = `<option value="1">1x de R$${(valor * jurosBaixo).toFixed(2)}</option>
       <option value="2">2x de R$${((valor * jurosBaixo) / 2).toFixed(2)}</option>
       <option value="3">3x de R$${((valor * jurosBaixo) / 3).toFixed(2)}</option>
       <option value="4">4x de R$${((valor * jurosMedio) / 4).toFixed(2)}</option>
@@ -59,11 +59,11 @@ function calcular() {
       <option value="10">10x de R$${((valor * jurosAlto) / 10).toFixed(2)}</option>`;
 
       if (qtdParcelas <= 3) {
-        valorPagar.textContent = `Total a pagar (3% de juros) R$${valor * jurosBaixo}`;
+        valorPagar.textContent = `Total a pagar (3% de juros) R$${(valor * jurosBaixo).toFixed(2)}`;
       } else if (qtdParcelas <= 6) {
-        valorPagar.textContent = `Total a pagar (5% de juros) R$${valor * jurosMedio}`;
+        valorPagar.textContent = `Total a pagar (5% de juros) R$${(valor * jurosMedio).toFixed(2)}`;
       } else {
-        valorPagar.textContent = `Total a pagar (7% de juros) R$${valor * jurosAlto}`;
+        valorPagar.textContent = `Total a pagar (7% de juros) R$${(valor * jurosAlto).toFixed(2)}`;
       }
       break;
   }
