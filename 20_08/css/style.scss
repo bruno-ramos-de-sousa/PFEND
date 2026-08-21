@@ -26,6 +26,7 @@ h1 {
   justify-items: center;
   align-content: center;
   background-color: rgba($color: #313131, $alpha: 0.2);
+  border: 2px solid rgba(255,255,255,0.8);
   height: fit-content;
   padding: 30px;
   margin: 30px 0px;
@@ -75,63 +76,58 @@ fieldset {
   cursor: pointer;
   height: 50px;
   position: relative;
-}
-
-.radio-input label::before {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 220px;
-  height: 45px;
-  z-index: -1;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  border-radius: 10px;
-  border: 2px solid transparent;
-}
-.radio-input label:hover::before {
-  transition: all 0.2s ease;
-  background-color: #2a2e3c;
-}
-
-.radio-input .label:has(input:checked)::before {
-  background-color: #2d3750;
-  border-color: #435dd8;
-  height: 50px;
-}
-.radio-input .label .text {
-  color: #fff;
-}
-
-.radio-input .label input[type="radio"] {
-  background-color: #202030;
-  appearance: none;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.radio-input .label input[type="radio"]:checked {
-  background-color: #435dd8;
-  -webkit-animation: puls 0.7s forwards;
-  animation: pulse 0.7s forwards;
-}
-
-.radio-input .label input[type="radio"]:before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-color: #fff;
-  transform: scale(0);
-}
-
-.radio-input .label input[type="radio"]:checked::before {
-  transform: scale(1);
+  &:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 45px;
+    z-index: -1;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    &::before {
+      transition: all 0.2s ease;
+      background-color: #2a2e3c;
+    }
+  }
+  &:has(input:checked)::before {
+    background-color: #2d3750;
+    border-color: #435dd8;
+    height: 50px;
+  }
+  .text {
+    color: #fff;
+  }
+  input[type="radio"] {
+    background-color: #202030;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:checked {
+      background-color: #435dd8;
+      -webkit-animation: puls 0.7s forwards;
+      animation: pulse 0.7s forwards;
+    }
+    :checked {
+      transform: scale(1);
+      &:before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        background-color: #fff;
+        transform: scale(0);
+      }
+    }
+  }
 }
 
 @keyframes pulse {
