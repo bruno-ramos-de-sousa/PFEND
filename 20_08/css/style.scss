@@ -6,6 +6,10 @@
 
 :root {
   --primary-green: #708066;
+  --js-yellow: #f0db4f;
+  --js-low-yellow: #bb9c83;
+  --primary-white: #f6f9f6;
+  --primary-black: #212121;
 }
 
 body {
@@ -13,13 +17,20 @@ body {
   height: 100dvh;
   align-content: center;
   justify-items: center;
-  background-color: #212121;
+  background-color: var(--primary-black);
 }
 
 h1 {
-  color: #f0db4f;
+  color: var(--js-yellow);
   font-size: 3rem;
   margin-top: -40px;
+  text-shadow: 2px 2px var(--js-low-yellow);
+}
+
+h2 {
+  color: var(--primary-white);
+  font-size: 2.4rem;
+  margin-top: 30px;
 }
 
 .container {
@@ -32,7 +43,7 @@ h1 {
   margin: 30px 0px;
   text-align: center;
   border-radius: 4px;
-  color: #f6f9f6;
+  color: var(--primary-white);
   form {
     width: 100%;
     height: 100%;
@@ -76,6 +87,8 @@ fieldset {
   cursor: pointer;
   height: 50px;
   position: relative;
+  border: solid 1px rgba(#f6f9f6, 0.2);
+  border-radius: 10px;
   &:before {
     position: absolute;
     content: "";
@@ -95,7 +108,7 @@ fieldset {
   }
   &:has(input:checked)::before {
     background-color: #2d3750;
-    border-color: #435dd8;
+    border-color: var(--js-yellow);
     height: 50px;
   }
   .text {
@@ -111,7 +124,7 @@ fieldset {
     justify-content: center;
     align-items: center;
     &:checked {
-      background-color: #435dd8;
+      background-color: var(--js-yellow);
       -webkit-animation: puls 0.7s forwards;
       animation: pulse 0.7s forwards;
     }
@@ -123,7 +136,7 @@ fieldset {
         height: 6px;
         border-radius: 50%;
         transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-        background-color: #fff;
+        background-color: var(--primary-white);
         transform: scale(0);
       }
     }
@@ -185,8 +198,8 @@ fieldset {
 }
 
 .radio-input .label:has(input:checked)::before {
-  background-color: #2d3750;
-  border-color: #435dd8;
+  background-color: #504e42;
+  border-color: var(--js-yellow);
   height: 50px;
 }
 .radio-input .label .text {
@@ -204,7 +217,7 @@ fieldset {
   align-items: center;
 }
 .radio-input .label input[type="radio"]:checked {
-  background-color: #435dd8;
+  background-color: rgba($color: #f0db4f, $alpha: 0.9);
   -webkit-animation: puls 0.7s forwards;
   animation: pulse 0.7s forwards;
 }
@@ -215,7 +228,7 @@ fieldset {
   height: 6px;
   border-radius: 50%;
   transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-color: #fff;
+  background-color: rgba($color: #cab948, $alpha: 0.7);
   transform: scale(0);
 }
 
@@ -231,7 +244,7 @@ fieldset {
     box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba($color: #cab948, $alpha: 0.7);
   }
 }
 
@@ -243,14 +256,38 @@ fieldset {
   cursor: pointer;
   width: 220px;
   height: 45px;
-  background-color: #5369db;
+  background-color: var(--js-yellow);
   border-radius: 10px;
   border: none;
-  color: #f6f9f6;
+  color: var(--primary-white);
   &:hover {
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border: 2px solid transparent;
-    background-color: #435dd8;
-    border-color: #5369db;
+    border: var(--primary-white);
+    color: #202030;
+    border: solid 1px orange;
   }
+}
+
+#acertos {
+  margin: 10px;
+  color: #39ff14;
+  font-size: 1.5rem;
+}
+
+#erros {
+  margin: 10px;
+  color: #FF3131;
+  font-size: 1.5rem;
+}
+
+#aproveitamento {
+  margin: 10px;
+  font-size: 1.5rem;
+}
+
+#joinha {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
 }

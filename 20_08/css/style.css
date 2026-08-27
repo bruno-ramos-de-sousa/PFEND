@@ -6,6 +6,10 @@
 
 :root {
   --primary-green: #708066;
+  --js-yellow: #f0db4f;
+  --js-low-yellow: #bb9c83;
+  --primary-white: #f6f9f6;
+  --primary-black: #212121;
 }
 
 body {
@@ -13,26 +17,34 @@ body {
   height: 100dvh;
   align-content: center;
   justify-items: center;
-  background-color: #212121;
+  background-color: var(--primary-black);
 }
 
 h1 {
-  color: #f0db4f;
+  color: var(--js-yellow);
   font-size: 3rem;
   margin-top: -40px;
+  text-shadow: 2px 2px var(--js-low-yellow);
+}
+
+h2 {
+  color: var(--primary-white);
+  font-size: 2.4rem;
+  margin-top: 30px;
 }
 
 .container {
   justify-items: center;
   align-content: center;
   background-color: rgba(49, 49, 49, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   height: -moz-fit-content;
   height: fit-content;
   padding: 30px;
   margin: 30px 0px;
   text-align: center;
   border-radius: 4px;
-  color: #f6f9f6;
+  color: var(--primary-white);
 }
 .container form {
   width: 100%;
@@ -77,9 +89,10 @@ fieldset {
   cursor: pointer;
   height: 50px;
   position: relative;
+  border: solid 1px rgba(246, 249, 246, 0.2);
+  border-radius: 10px;
 }
-
-.radio-input label::before {
+.radio-input label:before {
   position: absolute;
   content: "";
   top: 50%;
@@ -92,23 +105,19 @@ fieldset {
   border-radius: 10px;
   border: 2px solid transparent;
 }
-
-.radio-input label:hover::before {
+.radio-input label:before::before {
   transition: all 0.2s ease;
   background-color: #2a2e3c;
 }
-
-.radio-input .label:has(input:checked)::before {
+.radio-input label:has(input:checked)::before {
   background-color: #2d3750;
-  border-color: #435dd8;
+  border-color: var(--js-yellow);
   height: 50px;
 }
-
-.radio-input .label .text {
+.radio-input label .text {
   color: #fff;
 }
-
-.radio-input .label input[type=radio] {
+.radio-input label input[type=radio] {
   background-color: #202030;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -120,24 +129,21 @@ fieldset {
   justify-content: center;
   align-items: center;
 }
-
-.radio-input .label input[type=radio]:checked {
-  background-color: #435dd8;
+.radio-input label input[type=radio]:checked {
+  background-color: var(--js-yellow);
   animation: pulse 0.7s forwards;
 }
-
-.radio-input .label input[type=radio]:before {
+.radio-input label input[type=radio] :checked {
+  transform: scale(1);
+}
+.radio-input label input[type=radio] :checked:before {
   content: "";
   width: 6px;
   height: 6px;
   border-radius: 50%;
   transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-color: #fff;
+  background-color: var(--primary-white);
   transform: scale(0);
-}
-
-.radio-input .label input[type=radio]:checked::before {
-  transform: scale(1);
 }
 
 @keyframes pulse {
@@ -195,8 +201,8 @@ fieldset {
 }
 
 .radio-input .label:has(input:checked)::before {
-  background-color: #2d3750;
-  border-color: #435dd8;
+  background-color: #504e42;
+  border-color: var(--js-yellow);
   height: 50px;
 }
 
@@ -218,7 +224,7 @@ fieldset {
 }
 
 .radio-input .label input[type=radio]:checked {
-  background-color: #435dd8;
+  background-color: rgba(240, 219, 79, 0.9);
   animation: pulse 0.7s forwards;
 }
 
@@ -228,7 +234,7 @@ fieldset {
   height: 6px;
   border-radius: 50%;
   transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-color: #fff;
+  background-color: rgba(202, 185, 72, 0.7);
   transform: scale(0);
 }
 
@@ -244,7 +250,7 @@ fieldset {
     box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(202, 185, 72, 0.7);
   }
 }
 #submit {
@@ -255,14 +261,39 @@ fieldset {
   cursor: pointer;
   width: 220px;
   height: 45px;
-  background-color: #5369db;
+  background-color: var(--js-yellow);
   border-radius: 10px;
   border: none;
-  color: #f6f9f6;
+  color: var(--primary-white);
 }
 #submit:hover {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   border: 2px solid transparent;
-  background-color: #435dd8;
-  border-color: #5369db;
+  border: var(--primary-white);
+  color: #202030;
+  border: solid 1px orange;
+}
+
+#acertos {
+  margin: 10px;
+  color: #39ff14;
+  font-size: 1.5rem;
+}
+
+#erros {
+  margin: 10px;
+  color: #FF3131;
+  font-size: 1.5rem;
+}
+
+#aproveitamento {
+  margin: 10px;
+  font-size: 1.5rem;
+}
+
+#joinha {
+  height: 200px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

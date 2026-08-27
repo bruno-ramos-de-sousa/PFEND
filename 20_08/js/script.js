@@ -22,18 +22,18 @@ function mudarPagina() {
         window.location.href = "segunda-pergunta.html";
         break;
       case 2:
-        window.location.href = "";
+        window.location.href = "terceira-pergunta.html";
         break;
       case 3:
-        window.location.href = "";
+        window.location.href = "quarta-pergunta.html";
         break;
       case 4:
-        window.location.href = "";
+        window.location.href = "resultado.html";
         break;
     }
     retrnResp.style.display = "none";
     btnResp.style.display = "";
-  }, 2000);
+  }, 1000);
 }
 
 function verificarResp(event) {
@@ -68,4 +68,14 @@ function verificarResp(event) {
   mudarPagina();
 }
 
-form.addEventListener("submit", verificarResp);
+if (form) {
+  form.addEventListener("submit", verificarResp);
+} else if (document.title === "Resultado") {
+  const printAcertos = document.getElementById("acertos");
+  const printErros = document.getElementById("erros");
+  const printAproveitamento = document.getElementById("aproveitamento");
+
+  printAcertos.innerText = `Acertos: ${pontos}`;
+  printErros.innerText = `Erros: ${4 - pontos}`;
+  printAproveitamento.innerText = `Aproveitamento: ${(pontos/4*100).toFixed(0)}%`;
+}
