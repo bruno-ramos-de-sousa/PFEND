@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    onscroll="teste01()"
+    onresize="teste02()"
+    style="background: #f6f9f6; padding: 0; margin: 0"
+  >
+    <label for="">Nome:</label>
+    <input type="text" onkeydown="acao01()" name="" id="" />
+
+    <br /><br />
+
+    <label for="">Nome:</label>
+    <input type="text" onkeypress="acao02(event)" name="" id="" />
+
+    <br /><br />
+
+    <label for="">Nome:</label>
+    <input type="text" onkeyup="acao03()" name="" id="" />
+
+    <br /><br />
+
+    <input type="text" onblur="acao04()"/>
+
+    <select onchange="acao05()">
+      <option>--- Selecione ---</option>
+      <option value="1">Primeira opção</option>
+      <option value="2">Segunda opção</option>
+    </select>
+
+    <div style="height: 3000px; width: 100%"></div>
+  </body>
+  <script src="script/script.js"></script>
+</html>

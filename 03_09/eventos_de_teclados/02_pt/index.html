@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      placeholder="Digite seu nome"
+      id="nome_usuario"
+      class="campo_texto"
+      name="nome"
+    />
+    <p id="idTeste" class="classeTeste">TESTE DE DOM</p>
+    <h1>TITULO 1</h1>
+    <h1>TITULO 2</h1>
+    <h1>TITULO 3</h1>
+    <h1>TITULO 4</h1>
+    <script>
+      console.log("Por id");
+      console.log(document.getElementById("nome_usuario"));
+
+      let titulos = document.querySelectorAll("h1");
+      console.log(titulos);
+
+      titulos.forEach(element => {
+        console.log(element);
+      });
+
+      for (let i = 0; )
+    </script>
+  </body>
+</html>
