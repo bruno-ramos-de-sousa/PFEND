@@ -1,0 +1,24 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const multiply = function (a, b) {
+        return a * b;
+      };
+      console.log("funcao com retorno sem arrow: " + multiply(4, 2));
+
+      const multiplicar = (a, b) => a * b;
+      console.log("funcao com retorno com arrow: " + multiplicar(6, 2));
+
+      const ola = function() {return "Ola mundo"}
+      console.log("funcao sem retorno sem arrow: " + ola());
+
+      const hello = () => "Hello world"
+      console.log("funcao sem retorno com arrow: " + hello());
+    </script>
+  </body>
+</html>

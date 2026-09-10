@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    max-width: 100dvw;
+    height: 100dvh;
+}
+
+.pista {
+    height: 100dvh;
+    width: 90dvw;
+    display: flex;
+    background: #f6f9f6;
+}
+
+.chegada {
+    height: 100dvh;
+    width: 10dvw;
+    background: goldenrod;
+}
+
+#carro1 {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 330.75px;
+    left: 50px;
+    background: blue;
+}
+
+#carro2 {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 472.5px;
+    left: 50px;
+    background: red;
+}
+
+#carro3 {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 614.25px;
+    left: 50px;
+    background: greenyellow;
+}
+
+#run {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 80%;
+}
